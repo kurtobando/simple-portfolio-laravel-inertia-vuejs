@@ -16,4 +16,12 @@ use Inertia\Inertia;
 
 Route::get('/', static function () {
     return Inertia::render('TheIndex');
-});
+})->name('about');
+
+Route::get('/projects', static function () {
+    return Inertia::render('TheProjects');
+})->name('projects');
+
+Route::get('/contact', static function () {
+    return Inertia::render('TheContact');
+})->name('contact');
