@@ -11,6 +11,8 @@
         </p>
         <SocialMediaLinks />
         <form @submit.prevent="submit">
+            <p class="">{{ success }}</p>
+            <p>{{ error }}</p>
             <input
                 v-model="form.name"
                 type="text"
@@ -39,8 +41,9 @@
 <script>
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
 import Navigation from '@/Components/Navigation.vue';
+import { computed } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
-import { useForm } from '@inertiajs/inertia-vue3';
+import { useForm, usePage } from '@inertiajs/inertia-vue3';
 
 export default {
     components: {
@@ -49,6 +52,9 @@ export default {
         SocialMediaLinks,
     },
     setup() {
+        const success = computed(() => usePage().props.value.flash.success);
+        const error = computed(() => usePage().props.value.flash.error);
+
         const form = useForm({
             name: '',
             email: '',
@@ -67,6 +73,8 @@ export default {
         return {
             form,
             submit,
+            success,
+            error,
         };
     },
 };

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -13,8 +14,10 @@ class ContactController extends Controller
         return Inertia::render('TheContact');
     }
 
-    public function store(ContactRequest $request): void
+    public function store(ContactRequest $request): RedirectResponse
     {
-//        dd($request->all());
+        return redirect()
+            ->route('contact')
+            ->with('success', 'Thanks for contacting us!');
     }
 }
