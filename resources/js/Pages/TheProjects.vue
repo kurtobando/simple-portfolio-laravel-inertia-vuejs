@@ -2,18 +2,17 @@
     <Head>
         <title>Personal Projects</title>
     </Head>
-    <Navigation />
     <div>List projects here</div>
 </template>
 
 <script>
-import Navigation from '@/Components/Navigation.vue';
+import FullWidth from '@/Layout/FullWidth.vue';
 import { Head } from '@inertiajs/inertia-vue3';
 
 export default {
+    layout: FullWidth,
     components: {
         Head,
-        Navigation,
     },
 };
 </script>

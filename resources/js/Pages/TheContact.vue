@@ -2,7 +2,6 @@
     <Head>
         <title>Contact</title>
     </Head>
-    <Navigation />
     <div>
         <h1 class="font-bold text-5xl wider tracking-tight">
             Want to work together ?
@@ -42,15 +41,15 @@
 
 <script>
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
-import Navigation from '@/Components/Navigation.vue';
+import FullWidth from '@/Layout/FullWidth.vue';
 import { computed } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
 import { useForm, usePage } from '@inertiajs/inertia-vue3';
 
 export default {
+    layout: FullWidth,
     components: {
         Head,
-        Navigation,
         SocialMediaLinks,
     },
     setup() {
