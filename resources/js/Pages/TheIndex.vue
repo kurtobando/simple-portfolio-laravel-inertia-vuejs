@@ -11,7 +11,7 @@
             A frontend developer who enjoy the experience working with
             JavaScript, and travel during spare time.
         </p>
-        <SocialMediaLinks />
+        <SocialMediaLinks class="mt-8" />
     </div>
 </template>
 
