@@ -1,8 +1,20 @@
 <template>
-    <menu>
-        <Link :href="$route('about')">About</Link>
-        <Link :href="$route('projects')">Projects</Link>
-        <Link :href="$route('contact')">Contact</Link>
+    <menu class="flex gap-4">
+        <Link
+            class="hover:underline"
+            :href="$route('about')">
+            About
+        </Link>
+        <Link
+            class="hover:underline"
+            :href="$route('projects')">
+            Projects
+        </Link>
+        <Link
+            class="hover:underline"
+            :href="$route('contact')">
+            Contact
+        </Link>
     </menu>
 </template>
 

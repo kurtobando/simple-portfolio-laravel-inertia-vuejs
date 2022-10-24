@@ -1,11 +1,13 @@
 <template>
     <Head>
-        <title>Hi there! Im Kurt</title>
+        <title>Hi there! I'm Kurt</title>
     </Head>
     <Navigation />
     <div>
-        <h1>Hey! I’m Kurt</h1>
-        <p>
+        <h1 class="font-bold text-5xl wider tracking-tight">
+            Hi there! I am Kurt
+        </h1>
+        <p class="text-lg">
             A frontend developer who enjoy the experience working with
             JavaScript, and travel during spare time.
         </p>

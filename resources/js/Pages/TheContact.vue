@@ -4,8 +4,10 @@
     </Head>
     <Navigation />
     <div>
-        <h1>Want to work together ?</h1>
-        <p>
+        <h1 class="font-bold text-5xl wider tracking-tight">
+            Want to work together ?
+        </h1>
+        <p class="text-lg">
             If you are excited about something you are making. I want to work
             with you.
         </p>
