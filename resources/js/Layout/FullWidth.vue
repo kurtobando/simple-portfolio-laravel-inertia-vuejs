@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="min-h-screen">
         <Navigation />
         <slot />
     </main>

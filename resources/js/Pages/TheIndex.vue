@@ -2,11 +2,12 @@
     <Head>
         <title>Hi there! I'm Kurt</title>
     </Head>
-    <div>
+    <div
+        class="flex flex-col justify-center items-center text-center gap-4 p-8 min-h-screen">
         <h1 class="font-bold text-5xl wider tracking-tight">
             Hi there! I am Kurt
         </h1>
-        <p class="text-lg">
+        <p class="text-lg w-full xl:w-1/2">
             A frontend developer who enjoy the experience working with
             JavaScript, and travel during spare time.
         </p>
