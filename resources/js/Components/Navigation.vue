@@ -1,6 +1,5 @@
 <template>
-    <menu
-        class="flex justify-center md:justify-end items-center gap-8 p-8 px-12 text-lg">
+    <menu class="flex justify-center md:justify-end items-center gap-8 p-8 px-12 text-lg">
         <Link
             class="hover:underline"
             :class="{ 'font-bold': $page.url === '/' }"
