@@ -8,7 +8,7 @@
                 <div class="flex min-h-full items-center justify-center p-4">
                     <div
                         ref="modalRef"
-                        class="relative rounded bg-white shadow p-6 md:p-10 w-full md:w-2/3 2xl:w-1/2">
+                        class="relative rounded bg-white shadow p-6 md:p-10 w-full md:w-2/3 xl:w-2/3 2xl:w-1/2">
                         <slot />
                     </div>
                 </div>

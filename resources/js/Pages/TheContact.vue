@@ -26,7 +26,6 @@
                 <form
                     @submit.prevent="submit"
                     class="flex flex-col gap-3 w-full md:w-1/2">
-                    <p class="text-green-600 text-center">{{ success }}</p>
                     <p class="text-red-600 text-center">{{ error }}</p>
                     <input
                         class="rounded form-input border border-slate-200"
@@ -78,6 +77,7 @@ import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
 import { computed, ref } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
 import { useForm, usePage } from '@inertiajs/inertia-vue3';
+import Toastify from 'toastify-js';
 
 export default {
     layout: FullWidth,
@@ -102,6 +102,13 @@ export default {
                 preserveScroll: true,
                 onSuccess: () => {
                     form.reset('name', 'email', 'message');
+                    Toastify({
+                        text: success.value,
+                        duration: 10000,
+                        gravity: 'top',
+                        position: 'center',
+                        stopOnFocus: true,
+                    }).showToast();
                 },
             });
         };

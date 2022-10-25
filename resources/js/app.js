@@ -1,4 +1,5 @@
 import '../css/app.css';
+import 'toastify-js/src/toastify.css';
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
