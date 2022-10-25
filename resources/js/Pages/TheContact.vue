@@ -10,53 +10,63 @@
             @click="modalToggle">
             Send Message
         </button>
-        <!--        <form-->
-        <!--            @submit.prevent="submit"-->
-        <!--            class="flex flex-col gap-4 w-full md:w-auto">-->
-        <!--            <p class="text-green-600">{{ success }}</p>-->
-        <!--            <p class="text-red-600">{{ error }}</p>-->
-        <!--            <input-->
-        <!--                class="p-2 border rounded"-->
-        <!--                v-model="form.name"-->
-        <!--                type="text"-->
-        <!--                placeholder="name" />-->
-        <!--            <p-->
-        <!--                class="self-start text-sm text-red-600"-->
-        <!--                v-if="form.errors.name">-->
-        <!--                {{ form.errors.name }}-->
-        <!--            </p>-->
-        <!--            <input-->
-        <!--                class="p-2 border rounded"-->
-        <!--                v-model="form.email"-->
-        <!--                type="text"-->
-        <!--                placeholder="email" />-->
-        <!--            <p-->
-        <!--                class="self-start text-sm text-red-600"-->
-        <!--                v-if="form.errors.email">-->
-        <!--                {{ form.errors.email }}-->
-        <!--            </p>-->
-        <!--            <textarea-->
-        <!--                class="p-2 border rounded"-->
-        <!--                v-model="form.message"-->
-        <!--                cols="30"-->
-        <!--                rows="10"-->
-        <!--                placeholder="message"></textarea>-->
-        <!--            <p-->
-        <!--                class="self-start text-sm text-red-600"-->
-        <!--                v-if="form.errors.message">-->
-        <!--                {{ form.errors.message }}-->
-        <!--            </p>-->
-        <!--            <button-->
-        <!--                class="bg-gray-800 text-white p-5 rounded"-->
-        <!--                type="submit"-->
-        <!--                :disabled="form.processing">-->
-        <!--                Send-->
-        <!--            </button>-->
-        <!--        </form>-->
+
         <Modal
             :is-open="modalIsOpen"
             @onToggle="modalToggle">
-            Hello World
+            <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                <div class="flex flex-col justify-center items-center text-center gap-4">
+                    <h2 class="font-bold text-5xl -tracking-wide mt-8 md:mt-0">Hi There!</h2>
+                    <p class="text-lg">
+                        I’m interested in freelance opportunities, however, if you have other request or question, don’t
+                        hesitate to use the form.
+                    </p>
+                    <SocialMediaLinks class="md:mt-6" />
+                </div>
+                <form
+                    @submit.prevent="submit"
+                    class="flex flex-col gap-3 w-full md:w-1/2">
+                    <p class="text-green-600">{{ success }}</p>
+                    <p class="text-red-600">{{ error }}</p>
+                    <input
+                        class="rounded form-input border border-slate-200"
+                        v-model="form.name"
+                        type="text"
+                        placeholder="name" />
+                    <p
+                        class="self-start text-sm text-red-600"
+                        v-if="form.errors.name">
+                        {{ form.errors.name }}
+                    </p>
+                    <input
+                        class="rounded form-input border border-slate-200"
+                        v-model="form.email"
+                        type="text"
+                        placeholder="email" />
+                    <p
+                        class="self-start text-sm text-red-600"
+                        v-if="form.errors.email">
+                        {{ form.errors.email }}
+                    </p>
+                    <textarea
+                        class="rounded form-textarea border border-slate-200"
+                        v-model="form.message"
+                        cols="30"
+                        rows="10"
+                        placeholder="message"></textarea>
+                    <p
+                        class="self-start text-sm text-red-600"
+                        v-if="form.errors.message">
+                        {{ form.errors.message }}
+                    </p>
+                    <button
+                        class="bg-gray-800 text-white p-5 rounded"
+                        type="submit"
+                        :disabled="form.processing">
+                        Send
+                    </button>
+                </form>
+            </div>
         </Modal>
     </div>
 </template>
@@ -64,6 +74,7 @@
 <script>
 import Modal from '@/Components/Modal.vue';
 import FullWidth from '@/Layout/FullWidth.vue';
+import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
 import { computed, ref } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
 import { useForm, usePage } from '@inertiajs/inertia-vue3';
@@ -71,6 +82,7 @@ import { useForm, usePage } from '@inertiajs/inertia-vue3';
 export default {
     layout: FullWidth,
     components: {
+        SocialMediaLinks,
         Head,
         Modal,
     },
