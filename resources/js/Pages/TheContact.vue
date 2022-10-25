@@ -26,8 +26,8 @@
                 <form
                     @submit.prevent="submit"
                     class="flex flex-col gap-3 w-full md:w-1/2">
-                    <p class="text-green-600">{{ success }}</p>
-                    <p class="text-red-600">{{ error }}</p>
+                    <p class="text-green-600 text-center">{{ success }}</p>
+                    <p class="text-red-600 text-center">{{ error }}</p>
                     <input
                         class="rounded form-input border border-slate-200"
                         v-model="form.name"
