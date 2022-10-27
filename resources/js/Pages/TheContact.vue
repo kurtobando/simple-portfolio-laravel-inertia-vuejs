@@ -109,6 +109,7 @@ export default {
                         position: 'center',
                         stopOnFocus: true,
                     }).showToast();
+                    modalToggle();
                 },
             });
         };
