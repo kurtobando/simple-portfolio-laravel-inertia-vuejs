@@ -4,7 +4,7 @@
             class="relative z-10"
             v-if="isOpen">
             <div class="fixed inset-0 bg-black bg-opacity-60"></div>
-            <div class="fixed inset-0 z-10 overflow-y-scroll">
+            <div class="fixed inset-0 z-10 overflow-y-scroll md:overflow-y-hidden">
                 <div class="flex min-h-full items-center justify-center p-4">
                     <div
                         ref="modalRef"
