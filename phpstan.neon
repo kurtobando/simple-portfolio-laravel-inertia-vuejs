@@ -9,6 +9,9 @@ parameters:
     # The level 9 is the highest level
     level: 6
 
+    ignoreErrors:
+        - '#Call to an undefined method Symfony\\Component\\HttpFoundation\\Response::status\(\)#'
+
     # Rules - All rules that are specific to Laravel applications are listed here with their configurable options.
     # See https://github.com/nunomaduro/larastan/blob/master/docs/rules.md
     checkMissingIterableValueType: false
