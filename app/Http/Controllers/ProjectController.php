@@ -23,8 +23,18 @@ class ProjectController extends Controller
         return inertia('TheProjects', compact('projects'));
     }
 
-    public function show(string $slug): void
+    public function show(string $slug): Response
     {
-        dd($slug);
+        $wp = new WordPressRestApiService();
+        $project = $wp->getPostBySlug($slug);
+        $project = collect($project)->map(function ($project) {
+            return [
+                'id' => $project['id'],
+                'title' => $project['title']['rendered'],
+                'content' => $project['content']['rendered'],
+            ];
+        })->first();
+
+        return inertia('TheProject', compact('project'));
     }
 }

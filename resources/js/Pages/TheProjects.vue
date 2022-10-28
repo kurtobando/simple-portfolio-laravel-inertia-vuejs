@@ -3,7 +3,7 @@
         <title>Personal Projects</title>
     </Head>
     <div class="grid place-items-center min-h-screen">
-        <ul class="grid md:grid-cols-2 gap-8 p-6 w-full lg:w-3/4">
+        <ul class="grid lg:grid-cols-2 gap-8 p-6 w-full md:w-2/3 xl:w-1/2">
             <li
                 class="rounded shadow hover:shadow-lg transition-shadow duration-100"
                 v-for="project in projects"
@@ -15,7 +15,7 @@
                         {{ project.title }}
                     </span>
                     <p
-                        class="text-lg text-slate-600"
+                        class="text-slate-600 mt-2"
                         v-html="project.excerpt"></p>
                 </a>
             </li>

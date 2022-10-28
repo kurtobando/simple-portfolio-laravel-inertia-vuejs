@@ -8,13 +8,13 @@
         </Link>
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
-            :class="{ 'font-bold': $page.url === '/projects' }"
+            :class="{ 'font-bold': $page.url.startsWith('/projects') }"
             :href="$route('projects')">
             Projects
         </Link>
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
-            :class="{ 'font-bold': $page.url === '/contact' }"
+            :class="{ 'font-bold': $page.url.startsWith('/contact') }"
             :href="$route('contact')">
             Contact
         </Link>
