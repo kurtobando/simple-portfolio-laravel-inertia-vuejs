@@ -4,14 +4,18 @@
             <a
                 href="https://github.com/kurtobando/"
                 target="_blank">
-                <Github size="30" />
+                <Github
+                    class="hover:text-blue-500 transition-colors duration-200"
+                    size="30" />
             </a>
         </li>
         <li>
             <a
                 href="https://www.linkedin.com/in/kurt-obando/"
                 target="_blank">
-                <Linkedin size="30" />
+                <Linkedin
+                    class="hover:text-blue-500 transition-colors duration-200"
+                    size="30" />
             </a>
         </li>
     </ul>

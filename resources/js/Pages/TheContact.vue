@@ -6,7 +6,7 @@
         <h1 class="font-bold text-5xl wider tracking-tight">Want to work together ?</h1>
         <p class="text-lg">If you are excited about something you are making. I want to work with you.</p>
         <button
-            class="p-5 px-8 bg-gray-800 hover:bg-gray-700 text-white rounded mt-8"
+            class="p-5 px-8 bg-gray-800 hover:bg-gray-700 text-white rounded mt-8 hover:bg-blue-500 transition-colors duration-200"
             @click="modalToggle">
             Send Message
         </button>
@@ -59,7 +59,7 @@
                         {{ form.errors.message }}
                     </p>
                     <button
-                        class="bg-gray-800 text-white p-5 rounded"
+                        class="bg-gray-800 text-white p-5 rounded hover:bg-blue-500 transition-colors duration-200"
                         type="submit"
                         :disabled="form.processing">
                         Send

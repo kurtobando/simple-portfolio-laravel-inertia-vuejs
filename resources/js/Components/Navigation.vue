@@ -1,18 +1,19 @@
 <template>
     <menu class="flex justify-center md:justify-end items-center gap-8 p-8 px-12 text-lg">
         <Link
-            class="hover:underline"
+            class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url === '/' }"
             :href="$route('about')">
             About
         </Link>
         <Link
-            class="hover:underline"
+            class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url === '/projects' }"
             :href="$route('projects')">
             Projects
         </Link>
         <Link
+            class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url === '/contact' }"
             :href="$route('contact')">
             Contact

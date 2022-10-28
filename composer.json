@@ -59,6 +59,9 @@
         ],
         "phpstan": [
             "./vendor/bin/phpstan analyse"
+        ],
+        "before-commit": [
+            "composer pint && composer phpstan"
         ]
     },
     "extra": {
