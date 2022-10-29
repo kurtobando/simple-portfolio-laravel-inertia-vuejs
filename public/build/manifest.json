@@ -1,0 +1,138 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.4a96221b.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Auth/TheSignin.vue",
+      "resources/js/Pages/Dashboard/TheDashboard.vue",
+      "resources/js/Pages/TheContact.vue",
+      "resources/js/Pages/TheExceptionHandler.vue",
+      "resources/js/Pages/TheIndex.vue",
+      "resources/js/Pages/TheProject.vue",
+      "resources/js/Pages/TheProjects.vue"
+    ],
+    "css": [
+      "assets/app.17b2f36b.css"
+    ]
+  },
+  "resources/js/Pages/Auth/TheSignin.vue": {
+    "file": "assets/TheSignin.e363f083.js",
+    "src": "resources/js/Pages/Auth/TheSignin.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastify.8301b83e.js",
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
+    ],
+    "css": [
+      "assets/TheSignin.50c83ad7.css"
+    ]
+  },
+  "_toastify.8301b83e.js": {
+    "file": "assets/toastify.8301b83e.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "__plugin-vue_export-helper.cdc0426e.js": {
+    "file": "assets/_plugin-vue_export-helper.cdc0426e.js"
+  },
+  "resources/js/Pages/Dashboard/TheDashboard.vue": {
+    "file": "assets/TheDashboard.dc027144.js",
+    "src": "resources/js/Pages/Dashboard/TheDashboard.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
+    ]
+  },
+  "resources/js/Pages/TheContact.vue": {
+    "file": "assets/TheContact.78e43786.js",
+    "src": "resources/js/Pages/TheContact.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js",
+      "_FullWidth.602b3622.js",
+      "_SocialMediaLinks.a93c7219.js",
+      "_toastify.8301b83e.js"
+    ],
+    "css": [
+      "assets/TheContact.0913e19a.css"
+    ]
+  },
+  "_FullWidth.602b3622.js": {
+    "file": "assets/FullWidth.602b3622.js",
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
+    ]
+  },
+  "_SocialMediaLinks.a93c7219.js": {
+    "file": "assets/SocialMediaLinks.a93c7219.js",
+    "imports": [
+      "__plugin-vue_export-helper.cdc0426e.js",
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/TheExceptionHandler.vue": {
+    "file": "assets/TheExceptionHandler.3f1288c1.js",
+    "src": "resources/js/Pages/TheExceptionHandler.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
+    ]
+  },
+  "resources/js/Pages/TheIndex.vue": {
+    "file": "assets/TheIndex.a57cf356.js",
+    "src": "resources/js/Pages/TheIndex.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_FullWidth.602b3622.js",
+      "_SocialMediaLinks.a93c7219.js",
+      "__plugin-vue_export-helper.cdc0426e.js",
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/TheProject.vue": {
+    "file": "assets/TheProject.65c2b8ac.js",
+    "src": "resources/js/Pages/TheProject.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_FullWidth.602b3622.js",
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
+    ],
+    "css": [
+      "assets/TheProject.8e61a9bf.css"
+    ]
+  },
+  "resources/js/Pages/TheProjects.vue": {
+    "file": "assets/TheProjects.8e135866.js",
+    "src": "resources/js/Pages/TheProjects.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_FullWidth.602b3622.js",
+      "resources/js/app.js",
+      "__plugin-vue_export-helper.cdc0426e.js"
+    ]
+  },
+  "resources/js/Pages/TheContact.css": {
+    "file": "assets/TheContact.0913e19a.css",
+    "src": "resources/js/Pages/TheContact.css"
+  },
+  "resources/js/Pages/Auth/TheSignin.css": {
+    "file": "assets/TheSignin.50c83ad7.css",
+    "src": "resources/js/Pages/Auth/TheSignin.css"
+  },
+  "resources/js/Pages/TheProject.css": {
+    "file": "assets/TheProject.8e61a9bf.css",
+    "src": "resources/js/Pages/TheProject.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.17b2f36b.css",
+    "src": "resources/js/app.css"
+  }
+}
