@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\SigninController;
+use App\Http\Controllers\Auth\SignoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProjectController;
@@ -32,5 +33,6 @@ Route::get('/sign-in', [SigninController::class, "index"])->name('sign-in');
 Route::post('/sign-in', [SigninController::class, "store"])->name('sign-in.store');
 
 Route::group(['middleware' => 'auth'], static function () {
+    Route::post('/sign-out', [SignoutController::class, "__invoke"])->name('sign-out');
     Route::get('/dashboard', [DashboardController::class, "index"])->name('dashboard');
 });
