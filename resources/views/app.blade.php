@@ -12,5 +12,15 @@
     @routes
     @inertia
     @vite('resources/js/app.js')
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVTKGQP4RG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FVTKGQP4RG');
+    </script>
 </body>
 </html>
