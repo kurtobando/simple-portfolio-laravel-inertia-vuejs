@@ -129,3 +129,12 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+input::placeholder {
+    @apply text-xs;
+}
+textarea::placeholder {
+    @apply text-xs;
+}
+</style>
