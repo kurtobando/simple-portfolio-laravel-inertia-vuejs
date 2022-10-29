@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\SigninController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -25,3 +27,10 @@ Route::get('/projects/{slug}', [ProjectController::class, "show"])->name('projec
 
 Route::get('/contact', [ContactController::class, "index"])->name('contact');
 Route::post('/contact', [ContactController::class, "store"])->name('contact.store');
+
+Route::get('/sign-in', [SigninController::class, "index"])->name('sign-in');
+Route::post('/sign-in', [SigninController::class, "store"])->name('sign-in.store');
+
+Route::group(['middleware' => 'auth'], static function () {
+    Route::get('/dashboard', [DashboardController::class, "index"])->name('dashboard');
+});
