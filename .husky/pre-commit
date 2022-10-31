@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run format
-npm run lint
+composer run-script ziggy
 composer run-script pint
 composer run-script phpstan
+npm run format
+npm run lint
