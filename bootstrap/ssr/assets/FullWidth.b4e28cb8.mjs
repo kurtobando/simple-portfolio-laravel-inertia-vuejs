@@ -12,7 +12,7 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   _push(`<menu${ssrRenderAttrs(mergeProps({ class: "flex justify-center md:justify-end items-center gap-8 p-8 px-12 text-lg" }, _attrs))}>`);
   _push(ssrRenderComponent(_component_Link, {
     class: ["hover:text-blue-500 transition-colors duration-200", { "font-bold": _ctx.$page.url === "/" }],
-    href: _ctx.$route("about")
+    href: _ctx.route("about")
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
@@ -27,7 +27,7 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, _parent));
   _push(ssrRenderComponent(_component_Link, {
     class: ["hover:text-blue-500 transition-colors duration-200", { "font-bold": _ctx.$page.url.startsWith("/projects") }],
-    href: _ctx.$route("projects")
+    href: _ctx.route("projects")
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
@@ -42,7 +42,7 @@ function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, _parent));
   _push(ssrRenderComponent(_component_Link, {
     class: ["hover:text-blue-500 transition-colors duration-200", { "font-bold": _ctx.$page.url.startsWith("/contact") }],
-    href: _ctx.$route("contact")
+    href: _ctx.route("contact")
   }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {

@@ -1,4 +1,4 @@
-import { F as FullWidth } from "./FullWidth.471647c1.mjs";
+import { F as FullWidth } from "./FullWidth.b4e28cb8.mjs";
 import { Head } from "@inertiajs/inertia-vue3";
 import { resolveComponent, withCtx, createVNode, toDisplayString, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrInterpolate } from "vue/server-renderer";

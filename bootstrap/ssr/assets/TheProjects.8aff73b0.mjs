@@ -1,4 +1,4 @@
-import { F as FullWidth } from "./FullWidth.471647c1.mjs";
+import { F as FullWidth } from "./FullWidth.b4e28cb8.mjs";
 import { Head } from "@inertiajs/inertia-vue3";
 import { resolveComponent, withCtx, createVNode, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrRenderList, ssrRenderAttr, ssrInterpolate } from "vue/server-renderer";
@@ -29,7 +29,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
   }, _parent));
   _push(`<div class="grid place-items-center min-h-screen"><ul class="grid lg:grid-cols-2 gap-8 p-6 w-full md:w-2/3 xl:w-1/2"><!--[-->`);
   ssrRenderList($props.projects, (project) => {
-    _push(`<li class="rounded shadow hover:shadow-lg transition-shadow duration-100"><a${ssrRenderAttr("href", _ctx.$route("projects.show", { slug: project.slug }))} class="block p-8"><span class="font-bold text-xl hover:text-blue-500 transition-colors duration-200">${ssrInterpolate(project.title)}</span><p class="text-slate-600 mt-2">${project.excerpt}</p></a></li>`);
+    _push(`<li class="rounded shadow hover:shadow-lg transition-shadow duration-100"><a${ssrRenderAttr("href", _ctx.route("projects.show", { slug: project.slug }))} class="block p-8"><span class="font-bold text-xl hover:text-blue-500 transition-colors duration-200">${ssrInterpolate(project.title)}</span><p class="text-slate-600 mt-2">${project.excerpt}</p></a></li>`);
   });
   _push(`<!--]--></ul></div><!--]-->`);
 }

@@ -2,7 +2,7 @@ import { ref, useSSRContext, computed, resolveComponent, withCtx, createVNode, w
 import { onClickOutside } from "@vueuse/core";
 import { ssrRenderTeleport, ssrRenderSlot, ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrIncludeBooleanAttr } from "vue/server-renderer";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper.43be4956.mjs";
-import { F as FullWidth } from "./FullWidth.471647c1.mjs";
+import { F as FullWidth } from "./FullWidth.b4e28cb8.mjs";
 import { S as SocialMediaLinks } from "./SocialMediaLinks.49cd05e0.mjs";
 import { Head, usePage, useForm } from "@inertiajs/inertia-vue3";
 import Toastify from "toastify-js";

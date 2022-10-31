@@ -1,4 +1,4 @@
-import { F as FullWidth } from "./FullWidth.471647c1.mjs";
+import { F as FullWidth } from "./FullWidth.b4e28cb8.mjs";
 import { S as SocialMediaLinks } from "./SocialMediaLinks.49cd05e0.mjs";
 import { resolveComponent, mergeProps, useSSRContext } from "vue";
 import { ssrRenderAttrs, ssrRenderComponent } from "vue/server-renderer";

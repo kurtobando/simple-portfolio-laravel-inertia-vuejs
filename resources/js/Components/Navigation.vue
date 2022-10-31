@@ -3,19 +3,19 @@
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url === '/' }"
-            :href="$route('about')">
+            :href="route('about')">
             About
         </Link>
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url.startsWith('/projects') }"
-            :href="$route('projects')">
+            :href="route('projects')">
             Projects
         </Link>
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url.startsWith('/contact') }"
-            :href="$route('contact')">
+            :href="route('contact')">
             Contact
         </Link>
     </menu>

@@ -9,7 +9,7 @@
                 v-for="project in projects"
                 :key="project.id">
                 <a
-                    :href="$route('projects.show', { slug: project.slug })"
+                    :href="route('projects.show', { slug: project.slug })"
                     class="block p-8">
                     <span class="font-bold text-xl hover:text-blue-500 transition-colors duration-200">
                         {{ project.title }}

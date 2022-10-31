@@ -39,7 +39,7 @@
             </form>
             <Link
                 class="text-sm text-slate-400 text-center hover:text-blue-500"
-                :href="$route('about')">
+                :href="route('about')">
                 Go to Home
             </Link>
         </div>

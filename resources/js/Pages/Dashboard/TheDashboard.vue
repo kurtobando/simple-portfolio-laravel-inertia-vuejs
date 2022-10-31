@@ -8,7 +8,7 @@
             <a
                 class="hover:text-blue-500 transition-colors duration-200"
                 target="_blank"
-                :href="$route('horizon.index')">
+                :href="route('horizon.index')">
                 Horizon
                 <p class="text-xs text-slate-400">
                     Laravel Horizon provides a beautiful dashboard and code-driven configuration for your Laravel
@@ -19,7 +19,7 @@
             <a
                 class="hover:text-blue-500 transition-colors duration-200"
                 target="_blank"
-                :href="$route('telescope')">
+                :href="route('telescope')">
                 Telescope
                 <p class="text-xs text-slate-400">
                     Laravel Telescope makes a wonderful companion to your local Laravel development environment.
@@ -29,8 +29,9 @@
                 </p>
             </a>
             <Link
-                class="hover:text-blue-500 transition-colors duration-200"
-                :href="$route('sign-out')"
+                class="hover:text-blue-500 transition-colors duration-200 text-left"
+                :href="route('sign-out')"
+                as="button"
                 method="post">
                 Sign-out
                 <p class="text-xs text-slate-400">Sign-out your current session.</p>
