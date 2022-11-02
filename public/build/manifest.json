@@ -119,10 +119,6 @@
       "__plugin-vue_export-helper.cdc0426e.js"
     ]
   },
-  "resources/js/Pages/TheContact.css": {
-    "file": "assets/TheContact.0913e19a.css",
-    "src": "resources/js/Pages/TheContact.css"
-  },
   "resources/js/Pages/Auth/TheSignin.css": {
     "file": "assets/TheSignin.91c21b98.css",
     "src": "resources/js/Pages/Auth/TheSignin.css"
@@ -130,6 +126,10 @@
   "resources/js/Pages/TheProject.css": {
     "file": "assets/TheProject.8e61a9bf.css",
     "src": "resources/js/Pages/TheProject.css"
+  },
+  "resources/js/Pages/TheContact.css": {
+    "file": "assets/TheContact.0913e19a.css",
+    "src": "resources/js/Pages/TheContact.css"
   },
   "resources/js/app.css": {
     "file": "assets/app.731ca620.css",
