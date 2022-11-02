@@ -61,7 +61,7 @@
             "./vendor/bin/phpstan analyse"
         ],
         "ziggy": [
-            "@php artisan ziggy:generate && npx prettier resources/js/ziggy.js --write"
+            "@php artisan ziggy:generate"
         ],
         "before-commit": [
             "composer ziggy && composer pint && composer phpstan"
