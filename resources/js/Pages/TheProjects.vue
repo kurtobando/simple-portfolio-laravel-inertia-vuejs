@@ -8,7 +8,7 @@
                 class="rounded shadow hover:shadow-lg transition-shadow duration-100"
                 v-for="project in projects"
                 :key="project.id">
-                <a
+                <Link
                     :href="route('projects.show', { slug: project.slug })"
                     class="block p-8">
                     <span class="font-bold text-xl hover:text-blue-500 transition-colors duration-200">
@@ -17,7 +17,7 @@
                     <p
                         class="text-slate-600 mt-2"
                         v-html="project.excerpt"></p>
-                </a>
+                </Link>
             </li>
         </ul>
     </div>
@@ -25,12 +25,13 @@
 
 <script>
 import FullWidth from '@/Layout/FullWidth.vue';
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head, Link } from '@inertiajs/inertia-vue3';
 
 export default {
     layout: FullWidth,
     components: {
         Head,
+        Link,
     },
     props: {
         projects: Array,
