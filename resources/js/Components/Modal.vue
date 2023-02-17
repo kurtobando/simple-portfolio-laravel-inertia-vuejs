@@ -12,7 +12,7 @@
                         <slot />
                         <a
                             @click="onToggle"
-                            class="block underline text-sm text-center text-slate-600 my-8 mb-4 md:hidden">
+                            class="block underline text-sm text-center text-slate-600 my-8 mb-4 md:hidden cursor-pointer">
                             Close Window
                         </a>
                     </div>
@@ -22,31 +22,21 @@
     </Teleport>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
-export default {
-    emits: ['onToggle'],
-    props: {
-        isOpen: {
-            type: Boolean,
-            required: false,
-            default: false,
-        },
+const emits = defineEmits(['onToggle']);
+const props = defineProps({
+    isOpen: {
+        type: Boolean,
+        required: false,
+        default: false,
     },
-    setup(props, { emit }) {
-        const modalRef = ref(null);
-        const onToggle = () => {
-            emit('onToggle');
-        };
+});
 
-        onClickOutside(modalRef, onToggle);
+const modalRef = ref(null);
+const onToggle = () => emits('onToggle');
 
-        return {
-            onToggle,
-            modalRef,
-        };
-    },
-};
+onClickOutside(modalRef, onToggle);
 </script>

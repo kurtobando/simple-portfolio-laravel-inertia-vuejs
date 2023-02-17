@@ -8,18 +8,17 @@
     </div>
 </template>
 
+<script setup>
+import { Head } from '@inertiajs/inertia-vue3';
+const props = defineProps({
+    project: Object,
+});
+</script>
+
 <script>
 import FullWidth from '@/Layout/FullWidth.vue';
-import { Head } from '@inertiajs/inertia-vue3';
-
 export default {
     layout: FullWidth,
-    components: {
-        Head,
-    },
-    props: {
-        project: Object,
-    },
 };
 </script>
 

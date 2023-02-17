@@ -9,36 +9,32 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import { Head } from '@inertiajs/inertia-vue3';
 
-export default {
-    components: { Head },
-    props: {
-        status: Number,
-        message: String,
-    },
-    computed: {
-        title() {
-            return {
-                503: 'Service Unavailable',
-                500: 'Server Error',
-                400: 'Bad Request',
-                401: 'Unauthorized',
-                404: 'Page Not Found',
-                403: 'Forbidden',
-            }[this.status];
-        },
-        description() {
-            return {
-                503: 'Sorry, we are doing some maintenance. Please check back soon.',
-                500: 'Whoops, something went wrong on our servers.',
-                400: 'Whoops, you have a bad request.',
-                401: 'Sorry, you are not authorized.',
-                404: 'Sorry, the page you are looking for could not be found.',
-                403: 'Sorry, you are forbidden from accessing this page.',
-            }[this.status];
-        },
-    },
-};
+const props = defineProps({
+    status: Number,
+    message: String,
+});
+
+const title = computed(() => {
+    return {
+        503: 'Service Unavailable',
+        500: 'Server Error',
+        400: 'Bad Request',
+        401: 'Unauthorized',
+        404: 'Page Not Found',
+        403: 'Forbidden',
+    }[props.status];
+});
+const description = computed(() => {
+    return {
+        503: 'Sorry, we are doing some maintenance. Please check back soon.',
+        500: 'Whoops, something went wrong on our servers.',
+        400: 'Whoops, you have a bad request.',
+        401: 'Sorry, you are not authorized.',
+        404: 'Sorry, the page you are looking for could not be found.',
+        403: 'Sorry, you are forbidden from accessing this page.',
+    }[props.status];
+});
 </script>

@@ -70,63 +70,49 @@
     </div>
 </template>
 
-<script>
-import Modal from '@/Components/Modal.vue';
-import FullWidth from '@/Layout/FullWidth.vue';
-import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
-import { computed, ref } from 'vue';
+<script setup>
+import { computed, inject, ref } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
 import { useForm, usePage } from '@inertiajs/inertia-vue3';
+import Modal from '@/Components/Modal.vue';
+import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
 import Toastify from 'toastify-js';
 
+const route = inject('route');
+const modalIsOpen = ref(false);
+const success = computed(() => usePage().props.value.flash.success);
+const error = computed(() => usePage().props.value.flash.error);
+
+const form = useForm({
+    name: '',
+    email: '',
+    message: '',
+});
+
+const submit = () => {
+    form.post(route('contact.store'), {
+        preserveScroll: true,
+        onSuccess: () => {
+            form.reset('name', 'email', 'message');
+            Toastify({
+                text: success.value,
+                duration: 10000,
+                gravity: 'top',
+                position: 'center',
+                stopOnFocus: true,
+            }).showToast();
+            modalToggle();
+        },
+    });
+};
+
+const modalToggle = () => (modalIsOpen.value = !modalIsOpen.value);
+</script>
+
+<script>
+import FullWidth from '@/Layout/FullWidth.vue';
 export default {
     layout: FullWidth,
-    components: {
-        SocialMediaLinks,
-        Head,
-        Modal,
-    },
-    setup() {
-        const modalIsOpen = ref(false);
-        const success = computed(() => usePage().props.value.flash.success);
-        const error = computed(() => usePage().props.value.flash.error);
-
-        const form = useForm({
-            name: '',
-            email: '',
-            message: '',
-        });
-
-        const submit = () => {
-            form.post(route('contact.store'), {
-                preserveScroll: true,
-                onSuccess: () => {
-                    form.reset('name', 'email', 'message');
-                    Toastify({
-                        text: success.value,
-                        duration: 10000,
-                        gravity: 'top',
-                        position: 'center',
-                        stopOnFocus: true,
-                    }).showToast();
-                    modalToggle();
-                },
-            });
-        };
-
-        const modalToggle = () => {
-            modalIsOpen.value = !modalIsOpen.value;
-        };
-
-        return {
-            form,
-            submit,
-            success,
-            error,
-            modalIsOpen,
-            modalToggle,
-        };
-    },
 };
 </script>
 

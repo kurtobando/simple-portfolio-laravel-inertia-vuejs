@@ -463,7 +463,7 @@ default_1(
   (page) => createInertiaApp({
     page,
     render: renderToString,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Auth/TheSignin.vue": () => import("./assets/TheSignin.e6c3962f.mjs"), "./Pages/Dashboard/TheDashboard.vue": () => import("./assets/TheDashboard.5ae765f1.mjs"), "./Pages/TheContact.vue": () => import("./assets/TheContact.265d81e2.mjs"), "./Pages/TheExceptionHandler.vue": () => import("./assets/TheExceptionHandler.970c8a7c.mjs"), "./Pages/TheIndex.vue": () => import("./assets/TheIndex.0f5a4e64.mjs"), "./Pages/TheProject.vue": () => import("./assets/TheProject.9c19b553.mjs"), "./Pages/TheProjects.vue": () => import("./assets/TheProjects.361b8f98.mjs") })),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, /* @__PURE__ */ Object.assign({ "./Pages/Auth/TheSignin.vue": () => import("./assets/TheSignin.81ea05fe.mjs"), "./Pages/Dashboard/TheDashboard.vue": () => import("./assets/TheDashboard.0ed7c176.mjs"), "./Pages/TheContact.vue": () => import("./assets/TheContact.a561e2c7.mjs"), "./Pages/TheExceptionHandler.vue": () => import("./assets/TheExceptionHandler.fa3c34c1.mjs"), "./Pages/TheIndex.vue": () => import("./assets/TheIndex.d97e3522.mjs"), "./Pages/TheProject.vue": () => import("./assets/TheProject.29d7619e.mjs"), "./Pages/TheProjects.vue": () => import("./assets/TheProjects.6749aee6.mjs") })),
     setup({ app, props, plugin }) {
       const ssr = createSSRApp({ render: () => h$1(app, props) });
       ssr.use(C, Ziggy$1);

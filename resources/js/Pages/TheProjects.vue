@@ -23,18 +23,16 @@
     </div>
 </template>
 
+<script setup>
+import { Head, Link } from '@inertiajs/inertia-vue3';
+const props = defineProps({
+    projects: Array,
+});
+</script>
+
 <script>
 import FullWidth from '@/Layout/FullWidth.vue';
-import { Head, Link } from '@inertiajs/inertia-vue3';
-
 export default {
     layout: FullWidth,
-    components: {
-        Head,
-        Link,
-    },
-    props: {
-        projects: Array,
-    },
 };
 </script>
