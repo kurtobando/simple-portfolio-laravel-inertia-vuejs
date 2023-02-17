@@ -8,14 +8,13 @@
     </div>
 </template>
 
+<script setup>
+import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
+</script>
+
 <script>
 import FullWidth from '@/Layout/FullWidth.vue';
-import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
-
 export default {
     layout: FullWidth,
-    components: {
-        SocialMediaLinks,
-    },
 };
 </script>

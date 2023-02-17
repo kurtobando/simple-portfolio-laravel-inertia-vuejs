@@ -21,13 +21,6 @@
     </ul>
 </template>
 
-<script>
+<script setup>
 import { Linkedin, Github } from 'lucide-vue-next';
-
-export default {
-    components: {
-        Linkedin,
-        Github,
-    },
-};
 </script>

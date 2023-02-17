@@ -46,47 +46,36 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { computed, inject } from 'vue';
+import { useForm, usePage, Head, Link } from '@inertiajs/inertia-vue3';
 import Toastify from 'toastify-js';
-import { computed } from 'vue';
-import { Head, useForm, usePage, Link } from '@inertiajs/inertia-vue3';
 
-export default {
-    components: {
-        Head,
-        Link,
-    },
-    setup() {
-        const success = computed(() => usePage().props.value.flash.success);
-        const error = computed(() => usePage().props.value.flash.error);
-        const form = useForm({
-            email: '',
-            password: '',
-        });
+const route = inject('route');
+const success = computed(() => usePage().props.value.flash.success);
+const error = computed(() => usePage().props.value.flash.error);
 
-        const onSubmit = () => {
-            form.post(route('sign-in.store'), {
-                preserveScroll: true,
-                onSuccess: () => {
-                    if (error.value) {
-                        Toastify({
-                            text: error.value,
-                            duration: 3000,
-                            close: true,
-                            gravity: 'top',
-                            position: 'center',
-                            backgroundColor: 'linear-gradient(90deg, rgba(255,0,0,1) 44%, rgba(255,113,0,1) 100%)',
-                        }).showToast();
-                    }
-                },
-            });
-        };
+const form = useForm({
+    email: '',
+    password: '',
+});
 
-        return {
-            form,
-            onSubmit,
-        };
-    },
+const onSubmit = () => {
+    form.post(route('sign-in.store'), {
+        preserveScroll: true,
+        onSuccess: () => {
+            if (error.value) {
+                Toastify({
+                    text: error.value,
+                    duration: 3000,
+                    close: true,
+                    gravity: 'top',
+                    position: 'center',
+                    backgroundColor: 'linear-gradient(90deg, rgba(255,0,0,1) 44%, rgba(255,113,0,1) 100%)',
+                }).showToast();
+            }
+        },
+    });
 };
 </script>
 

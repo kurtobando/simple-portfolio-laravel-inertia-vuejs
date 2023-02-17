@@ -11,26 +11,13 @@
     </main>
 </template>
 
-<script>
-import Navigation from '@/Components/Navigation.vue';
+<script setup>
 import { Head, usePage } from '@inertiajs/inertia-vue3';
 import { computed } from 'vue';
+import Navigation from '@/Components/Navigation.vue';
 
-export default {
-    components: {
-        Navigation,
-        Head,
-    },
-    setup() {
-        const name = computed(() => usePage().props.value.app.name);
-        const description = computed(() => usePage().props.value.app.description);
-
-        return {
-            name,
-            description,
-        };
-    },
-};
+const name = computed(() => usePage().props.value.app.name);
+const description = computed(() => usePage().props.value.app.description);
 </script>
 
 <style scoped></style>
