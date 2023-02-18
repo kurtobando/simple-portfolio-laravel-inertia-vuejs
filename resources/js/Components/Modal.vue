@@ -12,7 +12,7 @@
                         <slot />
                         <a
                             @click="onToggle"
-                            class="block underline text-sm text-center text-slate-600 my-8 mb-4 md:hidden cursor-pointer">
+                            class="block text-sm text-center text-slate-400 my-8 mb-4 md:hidden cursor-pointer">
                             Close Window
                         </a>
                     </div>
