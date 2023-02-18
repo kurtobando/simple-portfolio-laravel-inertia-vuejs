@@ -3,13 +3,14 @@
         <title>{{ title }}</title>
     </Head>
     <div
-        class="min-h-screen flex flex-col items-center justify-center text-center uppercase text-slate-400 text-lg tracking-wider">
+        class="min-h-screen flex flex-col items-center justify-center text-center uppercase text-slate-600 text-lg tracking-wider p-4">
         <p>Oops, {{ title }}!</p>
-        <p class="text-slate-300">{{ message ?? description }}</p>
+        <p class="text-slate-400 text-xs leading-relaxed">{{ message ?? description }}</p>
     </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
 
 const props = defineProps({
