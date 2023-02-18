@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     @inertiaHead
 </head>
-<body class="antialiased text-gray-800">
+<body class="antialiased text-gray-800 bg-slate-50">
     @routes
     @inertia
     @vite('resources/js/app.js')

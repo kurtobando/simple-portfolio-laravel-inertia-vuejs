@@ -2,10 +2,10 @@
     <Head>
         <title>Personal Projects</title>
     </Head>
-    <div class="grid place-items-center min-h-screen">
-        <ul class="grid lg:grid-cols-2 gap-8 p-6 w-full md:w-2/3 xl:w-1/2">
+    <div class="grid place-items-center h-[88vh]">
+        <ul class="grid lg:grid-cols-2 gap-4 p-6 w-full md:w-2/3">
             <li
-                class="rounded shadow hover:shadow-lg transition-shadow duration-100"
+                class="bg-white rounded shadow-sm hover:shadow transition-shadow duration-100"
                 v-for="project in projects"
                 :key="project.id">
                 <Link
@@ -15,7 +15,7 @@
                         {{ project.title }}
                     </span>
                     <p
-                        class="text-slate-600 mt-2"
+                        class="text-slate-500 mt-2"
                         v-html="project.excerpt"></p>
                 </Link>
             </li>

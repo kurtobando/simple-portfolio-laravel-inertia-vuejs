@@ -2,9 +2,11 @@
     <Head>
         <title>Contact</title>
     </Head>
-    <div class="flex flex-col justify-center items-center text-center gap-4 p-8 min-h-screen">
+    <div class="flex flex-col justify-center items-center text-center gap-4 p-8 h-[88vh]">
         <h1 class="font-bold text-5xl wider tracking-tight">Want to work together ?</h1>
-        <p class="text-lg">If you are excited about something you are making. I want to work with you.</p>
+        <p class="text-lg text-slate-500">
+            If you are excited about something you are making. I want to work with you.
+        </p>
         <button
             class="p-5 px-8 bg-gray-800 hover:bg-gray-700 text-white rounded mt-8 hover:bg-blue-500 transition-colors duration-200"
             @click="modalToggle">
@@ -17,7 +19,7 @@
             <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                 <div class="flex flex-col justify-center items-center text-center gap-4">
                     <h2 class="font-bold text-5xl -tracking-wide mt-8 md:mt-0">Hi There!</h2>
-                    <p class="text-lg">
+                    <p class="text-lg text-slate-500">
                         I’m interested in freelance opportunities, however, if you have other request or question, don’t
                         hesitate to use the form.
                     </p>

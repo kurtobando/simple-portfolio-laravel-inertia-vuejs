@@ -32,7 +32,7 @@
                 </p>
                 <button
                     :disabled="form.processing"
-                    class="p-6 px-8 bg-gray-800 hover:bg-gray-700 text-white rounded hover:bg-blue-500 transition-colors duration-200"
+                    class="p-5 px-8 bg-gray-800 hover:bg-gray-700 text-white rounded hover:bg-blue-500 transition-colors duration-200"
                     type="submit">
                     Sign-in
                 </button>
