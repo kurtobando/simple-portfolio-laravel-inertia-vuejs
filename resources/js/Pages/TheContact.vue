@@ -28,7 +28,7 @@
                     class="flex flex-col gap-3 w-full md:w-1/2">
                     <p class="text-red-600 text-center">{{ error }}</p>
                     <input
-                        class="rounded form-input border border-slate-200 placeholder-slate-400"
+                        class="rounded form-input border border-slate-200 placeholder-slate-400 p-4"
                         v-model="form.name"
                         type="text"
                         placeholder="name" />
@@ -38,7 +38,7 @@
                         {{ form.errors.name }}
                     </p>
                     <input
-                        class="rounded form-input border border-slate-200 placeholder-slate-400"
+                        class="rounded form-input border border-slate-200 placeholder-slate-400 p-4"
                         v-model="form.email"
                         type="text"
                         placeholder="email" />
@@ -48,7 +48,7 @@
                         {{ form.errors.email }}
                     </p>
                     <textarea
-                        class="rounded form-textarea border border-slate-200 placeholder-slate-400"
+                        class="rounded form-textarea border border-slate-200 placeholder-slate-400 p-4"
                         v-model="form.message"
                         cols="30"
                         rows="10"
@@ -59,10 +59,10 @@
                         {{ form.errors.message }}
                     </p>
                     <button
-                        class="bg-gray-800 text-white p-5 rounded hover:bg-blue-500 transition-colors duration-200"
+                        class="bg-gray-800 text-white p-6 rounded hover:bg-blue-500 transition-colors duration-200"
                         type="submit"
                         :disabled="form.processing">
-                        Send
+                        Send Message
                     </button>
                 </form>
             </div>
@@ -117,6 +117,10 @@ export default {
 </script>
 
 <style scoped>
+input,
+textarea {
+    @apply text-sm text-slate-600;
+}
 input::placeholder {
     @apply text-xs;
 }
