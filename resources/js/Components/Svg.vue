@@ -2,8 +2,11 @@
     <img
         :src="svgSource(name)"
         :alt="name"
-        v-if="name !== ''"
+        v-if="svgSource(name) !== null"
         class="h-6 w-6 opacity-60" />
+    <span v-else>
+        {{ name }}
+    </span>
 </template>
 
 <script setup>
@@ -58,7 +61,7 @@ const svgSource = computed(() => {
                 _name = tailwind;
                 break;
             default:
-                _name = '';
+                _name = null;
         }
         return _name;
     };
