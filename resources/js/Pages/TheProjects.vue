@@ -18,13 +18,24 @@
                         class="text-slate-500 mt-2"
                         v-html="project.excerpt"></p>
                 </Link>
+                <ul class="flex flex-row gap-2 px-8 pb-8 items-center">
+                    <li
+                        v-for="svg in convertToolsToArray(project.tools)"
+                        :key="svg">
+                        <Svg :name="svg" />
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import Svg from '@/Components/Svg.vue';
+
+const convertToolsToArray = computed(() => (icons) => icons.split(',').map((icon) => icon.trim()));
 
 defineProps({
     projects: Array,

@@ -5,7 +5,14 @@
     <div class="p-6 w-full md:w-2/3 xl:w-1/2 mx-auto project">
         <h1 class="font-bold text-5xl">{{ project.title }}</h1>
         <div v-html="project.content"></div>
-        <div class="flex flex-row items-center gap-4 justify-center md:justify-start mt-8">
+        <ul class="flex flex-row gap-2 mt-8 items-center">
+            <li
+                v-for="svg in convertToolsToArray(project.tools)"
+                :key="svg">
+                <Svg :name="svg" />
+            </li>
+        </ul>
+        <div class="flex flex-row items-center gap-4 mt-8">
             <a
                 :href="project.demo"
                 target="_blank">
@@ -21,8 +28,13 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
-const props = defineProps({
+import Svg from '@/Components/Svg.vue';
+
+const convertToolsToArray = computed(() => (icons) => icons.split(',').map((icon) => icon.trim()));
+
+defineProps({
     project: Object,
 });
 </script>

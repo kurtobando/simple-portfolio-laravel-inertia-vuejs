@@ -1,0 +1,75 @@
+<template>
+    <img
+        :src="svgSource(name)"
+        :alt="name"
+        v-if="name !== ''"
+        class="h-6 w-6 opacity-60" />
+</template>
+
+<script setup>
+import { computed } from 'vue';
+import html from '@svg/html.svg';
+import css from '@svg/css.svg';
+import inertiajs from '@svg/inertiajs.svg';
+import js from '@svg/js.svg';
+import laravel from '@svg/laravel.svg';
+import node from '@svg/node.svg';
+import php from '@svg/php.svg';
+import scss from '@svg/scss.svg';
+import reactjs from '@svg/reactjs.svg';
+import vuejs from '@svg/vuejs.svg';
+import tailwind from '@svg/tailwind.svg';
+
+const svgSource = computed(() => {
+    return (name) => {
+        let _name;
+        switch (name.toLowerCase()) {
+            case 'html':
+                _name = html;
+                break;
+            case 'css':
+                _name = css;
+                break;
+            case 'scss':
+                _name = scss;
+                break;
+            case 'js':
+                _name = js;
+                break;
+            case 'php':
+                _name = php;
+                break;
+            case 'laravel':
+                _name = laravel;
+                break;
+            case 'node':
+                _name = node;
+                break;
+            case 'reactjs':
+                _name = reactjs;
+                break;
+            case 'vuejs':
+                _name = vuejs;
+                break;
+            case 'inertiajs':
+                _name = inertiajs;
+                break;
+            case 'tailwind':
+                _name = tailwind;
+                break;
+            default:
+                _name = '';
+        }
+        return _name;
+    };
+});
+
+defineProps({
+    name: {
+        type: String,
+        default: '',
+    },
+});
+</script>
+
+<style scoped></style>

@@ -28,6 +28,7 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './resources/js'),
+            '@svg': path.resolve(__dirname, './resources/svg'),
             ziggy: path.resolve('vendor/tightenco/ziggy/dist/index.es.js'),
             ziggyVue: path.resolve('vendor/tightenco/ziggy/dist/vue.es.js'),
         },
