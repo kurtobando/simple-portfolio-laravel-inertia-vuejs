@@ -35,6 +35,9 @@ class ProjectController extends Controller
                 'id' => $project['id'],
                 'title' => $project['title']['rendered'],
                 'content' => $project['content']['rendered'],
+                'tools' => $project['acf']['tools'],
+                'demo' => $project['acf']['demo'],
+                'source' => $project['acf']['source'],
             ];
         })->first();
 
