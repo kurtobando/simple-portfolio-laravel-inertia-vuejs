@@ -17,6 +17,7 @@ class ProjectController extends Controller
                 'title' => $project['title']['rendered'],
                 'excerpt' => $project['excerpt']['rendered'],
                 'slug' => $project['slug'],
+                'tools' => $project['acf']['tools'],
             ];
         });
 
