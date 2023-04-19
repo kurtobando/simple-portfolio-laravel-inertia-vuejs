@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { Link, Head } from '@inertiajs/inertia-vue3';
+import { Link, Head } from '@inertiajs/vue3';
 </script>
 
 <style scoped></style>

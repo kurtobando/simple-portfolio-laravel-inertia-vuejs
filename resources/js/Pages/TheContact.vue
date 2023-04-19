@@ -74,16 +74,15 @@
 
 <script lang="ts" setup>
 import { computed, inject, ref } from 'vue';
-import { Head } from '@inertiajs/inertia-vue3';
-import { useForm, usePage } from '@inertiajs/inertia-vue3';
+import { Head, useForm, usePage } from '@inertiajs/vue3';
 import Toastify from 'toastify-js';
 import Modal from '@/Components/Modal.vue';
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
 
 const route = inject('route');
 const modalIsOpen = ref(false);
-const success = computed(() => usePage().props.value.flash.success);
-const error = computed(() => usePage().props.value.flash.error);
+const success = computed(() => usePage().props.flash.success);
+const error = computed(() => usePage().props.flash.error);
 const form = useForm({ name: '', email: '', message: '' });
 
 function onSubmit() {

@@ -4,7 +4,7 @@
         "dev": "vite",
         "build:client": "vite build",
         "build:ssr": "vite build --ssr",
-        "build": "npm run build:client && npm run build:ssr",
+        "build": "vue-tsc --noEmit && npm run build:client && npm run build:ssr",
         "serve:ssr": "node bootstrap/ssr/ssr.mjs",
         "format": "prettier ./resources --write",
         "lint": "eslint ./resources --ext .vue,.js,.jsx,.ts,.tsx",
@@ -12,6 +12,7 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.3",
+        "@types/node": "^18.15.11",
         "@types/toastify-js": "^1.11.1",
         "@typescript-eslint/eslint-plugin": "^5.59.0",
         "@typescript-eslint/parser": "^5.59.0",
@@ -33,10 +34,7 @@
     "dependencies": {
         "@egjs/flicking-plugins": "^4.7.0",
         "@egjs/vue3-flicking": "^4.10.7",
-        "@inertiajs/inertia": "^0.11.1",
-        "@inertiajs/inertia-vue3": "^0.6.0",
-        "@inertiajs/progress": "^0.2.7",
-        "@inertiajs/server": "^0.1.0",
+        "@inertiajs/vue3": "^1.0.3",
         "@vue/server-renderer": "^3.2.41",
         "@vueuse/core": "^9.3.1",
         "lucide-vue-next": "^0.92.0",

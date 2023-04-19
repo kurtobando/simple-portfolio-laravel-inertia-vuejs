@@ -32,7 +32,7 @@
 <script lang="ts" setup>
 import { Project } from '../../types/project';
 import { computed } from 'vue';
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head } from '@inertiajs/vue3';
 import Svg from '@/Components/Svg.vue';
 
 const convertToolsToArray = computed(() => (icons) => icons.split(',').map((icon) => icon.trim()));

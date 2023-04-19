@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head } from '@inertiajs/vue3';
 
 const title = computed(() => {
     return {

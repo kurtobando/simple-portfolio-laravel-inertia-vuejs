@@ -38,7 +38,7 @@
 <script lang="ts" setup>
 import { Project } from '../../types/project';
 import { computed, inject } from 'vue';
-import { Head, Link } from '@inertiajs/inertia-vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import { Perspective, Pagination, Fade } from '@egjs/flicking-plugins';
 import Flicking from '@egjs/vue3-flicking';
 import Svg from '@/Components/Svg.vue';

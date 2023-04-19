@@ -48,11 +48,11 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue';
-import { useForm, usePage, Head, Link } from '@inertiajs/inertia-vue3';
+import { useForm, usePage, Head, Link } from '@inertiajs/vue3';
 import Toastify from 'toastify-js';
 
 const route = inject('route');
-const error = computed(() => usePage().props.value.flash.error);
+const error = computed(() => usePage().props.flash.error);
 const form = useForm({ email: '', password: '' });
 
 function onSubmit() {
