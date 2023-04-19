@@ -2,27 +2,29 @@
     <Head>
         <title>{{ project.title }}</title>
     </Head>
-    <div class="p-6 w-full md:w-2/3 xl:w-1/2 mx-auto project">
-        <h1 class="font-bold text-5xl">{{ project.title }}</h1>
-        <div v-html="project.content"></div>
-        <ul class="flex flex-row gap-2 mt-8 items-center">
-            <li
-                v-for="svg in convertToolsToArray(project.tools)"
-                :key="svg">
-                <Svg :name="svg" />
-            </li>
-        </ul>
-        <div class="flex flex-row items-center gap-4 mt-8">
-            <a
-                :href="project.demo"
-                target="_blank">
-                <button class="button button-primary">Demo</button>
-            </a>
-            <a
-                :href="project.source"
-                target="_blank">
-                <button class="button button-primary-outline">Source Code</button>
-            </a>
+    <div class="project">
+        <div>
+            <h1 class="font-bold text-5xl leading-tight">{{ project.title }}</h1>
+            <div v-html="project.content"></div>
+            <ul class="flex flex-row justify-center gap-2 mt-8 items-center">
+                <li
+                    v-for="svg in convertToolsToArray(project.tools)"
+                    :key="svg">
+                    <Svg :name="svg" />
+                </li>
+            </ul>
+            <div class="flex flex-row items-center justify-center gap-4 mt-8">
+                <a
+                    :href="project.demo"
+                    target="_blank">
+                    <button class="button button-primary">Demo</button>
+                </a>
+                <a
+                    :href="project.source"
+                    target="_blank">
+                    <button class="button button-primary-outline">Source Code</button>
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -48,7 +50,7 @@ export default {
 
 <style scoped>
 .project {
-    @apply my-10;
+    @apply grid place-content-center min-h-[88vh] text-center p-10 max-w-4xl mx-auto my-10;
 }
 .project:deep(h2),
 .project:deep(h3),
@@ -58,7 +60,7 @@ export default {
     @apply text-xl font-bold mt-8;
 }
 .project:deep(p) {
-    @apply text-slate-600 leading-relaxed mt-4;
+    @apply text-slate-500 leading-relaxed mt-4;
 }
 .project:deep(.wp-block-code) {
     @apply bg-slate-700 text-white p-6 rounded shadow overflow-auto my-4;
