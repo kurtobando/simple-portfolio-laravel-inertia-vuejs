@@ -4,7 +4,7 @@
         "dev": "vite",
         "build:client": "vite build",
         "build:ssr": "vite build --ssr",
-        "build": "npm run build:client && npm run build:ssr",
+        "build": "vue-tsc --noEmit && npm run build:client && npm run build:ssr",
         "serve:ssr": "node bootstrap/ssr/ssr.mjs",
         "format": "prettier ./resources --write",
         "lint": "eslint ./resources --ext .vue,.js,.jsx,.ts,.tsx",
@@ -12,29 +12,35 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.3",
+        "@types/node": "^18.15.11",
+        "@types/toastify-js": "^1.11.1",
+        "@types/ziggy-js": "^1.3.2",
+        "@typescript-eslint/eslint-plugin": "^5.59.0",
+        "@typescript-eslint/parser": "^5.59.0",
         "@vitejs/plugin-vue": "^3.1.2",
         "autoprefixer": "^10.4.12",
-        "eslint": "^8.26.0",
+        "eslint": "^8.38.0",
+        "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-vue": "^9.6.0",
+        "eslint-plugin-vue": "^9.11.0",
         "husky": "^8.0.0",
         "laravel-vite-plugin": "^0.6.1",
         "postcss": "^8.4.18",
         "prettier": "2.7.1",
         "tailwindcss": "^3.1.8",
-        "vite": "^3.0.0"
+        "typescript": "^5.0.4",
+        "vite": "^3.0.0",
+        "vue-tsc": "^1.2.0"
     },
     "dependencies": {
         "@egjs/flicking-plugins": "^4.7.0",
         "@egjs/vue3-flicking": "^4.10.7",
-        "@inertiajs/inertia": "^0.11.1",
-        "@inertiajs/inertia-vue3": "^0.6.0",
-        "@inertiajs/progress": "^0.2.7",
-        "@inertiajs/server": "^0.1.0",
+        "@inertiajs/vue3": "^1.0.3",
         "@vue/server-renderer": "^3.2.41",
         "@vueuse/core": "^9.3.1",
         "lucide-vue-next": "^0.92.0",
         "toastify-js": "^1.12.0",
-        "vue": "^3.2.41"
+        "vue": "^3.2.41",
+        "ziggy-js": "^1.5.0"
     }
 }

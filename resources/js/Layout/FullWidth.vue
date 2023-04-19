@@ -11,13 +11,14 @@
     </main>
 </template>
 
-<script setup>
-import { Head, usePage } from '@inertiajs/inertia-vue3';
+<script lang="ts" setup>
+import { SharedProps } from '@type/inertia';
+import { Head, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import Navigation from '@/Components/Navigation.vue';
 
-const name = computed(() => usePage().props.value.app.name);
-const description = computed(() => usePage().props.value.app.description);
+const name = computed(() => usePage<SharedProps>().props.app.name);
+const description = computed(() => usePage<SharedProps>().props.app.description);
 </script>
 
 <style scoped></style>

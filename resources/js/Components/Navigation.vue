@@ -21,6 +21,7 @@
     </menu>
 </template>
 
-<script setup>
-import { Link } from '@inertiajs/inertia-vue3';
+<script lang="ts" setup>
+import { Link } from '@inertiajs/vue3';
+import route from 'ziggy-js';
 </script>

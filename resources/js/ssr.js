@@ -3,11 +3,11 @@
 // https://laravel.com/docs/9.x/vite#ssr
 // https://github.com/tighten/ziggy#vue
 
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createSSRApp, h } from 'vue';
 import { renderToString } from '@vue/server-renderer';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import createServer from '@inertiajs/server';
+import { createInertiaApp } from '@inertiajs/vue3';
+import createServer from '@inertiajs/vue3/server';
 import { ZiggyVue } from 'ziggyVue';
 import { Ziggy } from './ziggy';
 

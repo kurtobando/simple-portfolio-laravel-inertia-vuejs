@@ -8,7 +8,7 @@
             If you are excited about something you are making. I want to work with you.
         </p>
         <button
-            class="p-5 px-8 bg-gray-800 hover:bg-gray-700 text-white rounded mt-8 hover:bg-blue-500 transition-colors duration-200"
+            class="p-5 px-8 bg-gray-800 text-white rounded mt-8 hover:bg-blue-500 transition-colors duration-200"
             @click="modalToggle">
             Send Message
         </button>
@@ -26,38 +26,38 @@
                     <SocialMediaLinks class="md:mt-6" />
                 </div>
                 <form
-                    @submit.prevent="submit"
-                    class="flex flex-col gap-3 w-full md:w-1/2">
+                    class="flex flex-col gap-3 w-full md:w-1/2"
+                    @submit.prevent="onSubmit">
                     <p class="text-red-600 text-center">{{ error }}</p>
                     <input
-                        class="rounded form-input border border-slate-100 placeholder-slate-400 p-4"
                         v-model="form.name"
+                        class="rounded form-input border border-slate-100 placeholder-slate-400 p-4"
                         type="text"
                         placeholder="name" />
                     <p
-                        class="self-start text-sm text-red-600"
-                        v-if="form.errors.name">
+                        v-if="form.errors.name"
+                        class="self-start text-sm text-red-600">
                         {{ form.errors.name }}
                     </p>
                     <input
-                        class="rounded form-input border border-slate-100 placeholder-slate-400 p-4"
                         v-model="form.email"
+                        class="rounded form-input border border-slate-100 placeholder-slate-400 p-4"
                         type="text"
                         placeholder="email" />
                     <p
-                        class="self-start text-sm text-red-600"
-                        v-if="form.errors.email">
+                        v-if="form.errors.email"
+                        class="self-start text-sm text-red-600">
                         {{ form.errors.email }}
                     </p>
                     <textarea
-                        class="rounded form-textarea border border-slate-100 placeholder-slate-400 p-4"
                         v-model="form.message"
+                        class="rounded form-textarea border border-slate-100 placeholder-slate-400 p-4"
                         cols="30"
                         rows="10"
                         placeholder="message"></textarea>
                     <p
-                        class="self-start text-sm text-red-600"
-                        v-if="form.errors.message">
+                        v-if="form.errors.message"
+                        class="self-start text-sm text-red-600">
                         {{ form.errors.message }}
                     </p>
                     <button
@@ -72,26 +72,21 @@
     </div>
 </template>
 
-<script setup>
-import { computed, inject, ref } from 'vue';
-import { Head } from '@inertiajs/inertia-vue3';
-import { useForm, usePage } from '@inertiajs/inertia-vue3';
+<script lang="ts" setup>
+import { SharedProps } from '@type/inertia';
+import { computed, ref } from 'vue';
+import { Head, useForm, usePage } from '@inertiajs/vue3';
+import Toastify from 'toastify-js';
 import Modal from '@/Components/Modal.vue';
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
-import Toastify from 'toastify-js';
+import route from 'ziggy-js';
 
-const route = inject('route');
 const modalIsOpen = ref(false);
-const success = computed(() => usePage().props.value.flash.success);
-const error = computed(() => usePage().props.value.flash.error);
+const success = computed(() => usePage<SharedProps>().props.flash.success);
+const error = computed(() => usePage<SharedProps>().props.flash.error);
+const form = useForm({ name: '', email: '', message: '' });
 
-const form = useForm({
-    name: '',
-    email: '',
-    message: '',
-});
-
-const submit = () => {
+function onSubmit() {
     form.post(route('contact.store'), {
         preserveScroll: true,
         onSuccess: () => {
@@ -106,13 +101,14 @@ const submit = () => {
             modalToggle();
         },
     });
-};
+}
 
 const modalToggle = () => (modalIsOpen.value = !modalIsOpen.value);
 </script>
 
-<script>
+<script lang="ts">
 import FullWidth from '@/Layout/FullWidth.vue';
+
 export default {
     layout: FullWidth,
 };

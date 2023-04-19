@@ -1,15 +1,15 @@
 <template>
     <img
-        :src="svgSource(name)"
-        :alt="name"
-        v-if="svgSource(name) !== null"
+        v-if="svgSource(props.name) !== null"
+        :src="svgSource(props.name) || ''"
+        :alt="props.name"
         class="h-6 w-6 opacity-60" />
     <span v-else>
-        {{ name }}
+        {{ props.name }}
     </span>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { computed } from 'vue';
 import html from '@svg/html.svg';
 import css from '@svg/css.svg';
@@ -24,7 +24,7 @@ import vuejs from '@svg/vuejs.svg';
 import tailwind from '@svg/tailwind.svg';
 
 const svgSource = computed(() => {
-    return (name) => {
+    return (name: string) => {
         let _name;
         switch (name.toLowerCase()) {
             case 'html':
@@ -67,12 +67,11 @@ const svgSource = computed(() => {
     };
 });
 
-defineProps({
-    name: {
-        type: String,
-        default: '',
-    },
-});
+const props = withDefaults(defineProps<Props>(), { name: '' });
+
+interface Props {
+    name: string;
+}
 </script>
 
 <style scoped></style>

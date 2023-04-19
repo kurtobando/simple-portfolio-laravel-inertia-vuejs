@@ -61,7 +61,7 @@
             "./vendor/bin/pint"
         ],
         "phpstan": [
-            "./vendor/bin/phpstan analyse --xdebug"
+            "./vendor/bin/phpstan analyse --memory-limit=4G --xdebug"
         ],
         "ziggy": [
             "@php artisan ziggy:generate"

@@ -21,6 +21,6 @@
     </ul>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { Linkedin, Github } from 'lucide-vue-next';
 </script>
