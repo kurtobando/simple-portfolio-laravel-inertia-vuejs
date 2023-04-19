@@ -3,7 +3,7 @@
         <title>Contact</title>
     </Head>
     <div class="flex flex-col justify-center items-center text-center gap-4 p-8 h-[88vh]">
-        <h1 class="font-bold text-5xl wider tracking-tight">Want to work together ?</h1>
+        <h1 class="font-bold text-5xl wider leading-tight">Want to work together ?</h1>
         <p class="text-lg text-slate-500">
             If you are excited about something you are making. I want to work with you.
         </p>
@@ -17,8 +17,8 @@
             :is-open="modalIsOpen"
             @onToggle="modalToggle">
             <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-                <div class="flex flex-col justify-center items-center text-center gap-4">
-                    <h2 class="font-bold text-5xl -tracking-wide mt-8 md:mt-0">Hi There!</h2>
+                <div class="flex flex-col justify-center items-center text-center gap-4 md:w-1/2">
+                    <h2 class="font-bold text-5xl leading-tight mt-8 md:mt-0">Hi There!</h2>
                     <p class="text-lg text-slate-500">
                         I’m interested in freelance opportunities, however, if you have other request or question, don’t
                         hesitate to use the form.
@@ -30,7 +30,7 @@
                     class="flex flex-col gap-3 w-full md:w-1/2">
                     <p class="text-red-600 text-center">{{ error }}</p>
                     <input
-                        class="rounded form-input border border-slate-200 placeholder-slate-400 p-4"
+                        class="rounded form-input border border-slate-100 placeholder-slate-400 p-4"
                         v-model="form.name"
                         type="text"
                         placeholder="name" />
@@ -40,7 +40,7 @@
                         {{ form.errors.name }}
                     </p>
                     <input
-                        class="rounded form-input border border-slate-200 placeholder-slate-400 p-4"
+                        class="rounded form-input border border-slate-100 placeholder-slate-400 p-4"
                         v-model="form.email"
                         type="text"
                         placeholder="email" />
@@ -50,7 +50,7 @@
                         {{ form.errors.email }}
                     </p>
                     <textarea
-                        class="rounded form-textarea border border-slate-200 placeholder-slate-400 p-4"
+                        class="rounded form-textarea border border-slate-100 placeholder-slate-400 p-4"
                         v-model="form.message"
                         cols="30"
                         rows="10"

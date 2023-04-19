@@ -1,5 +1,7 @@
 import '../css/app.css';
 import 'toastify-js/src/toastify.css';
+import '@egjs/vue3-flicking/dist/flicking.css';
+import '@egjs/flicking-plugins/dist/pagination.css';
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';

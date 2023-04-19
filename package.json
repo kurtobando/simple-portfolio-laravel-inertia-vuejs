@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite",
         "build:client": "vite build",
-        "build:ssr" : "vite build --ssr",
+        "build:ssr": "vite build --ssr",
         "build": "npm run build:client && npm run build:ssr",
         "serve:ssr": "node bootstrap/ssr/ssr.mjs",
         "format": "prettier ./resources --write",
@@ -25,6 +25,8 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "@egjs/flicking-plugins": "^4.7.0",
+        "@egjs/vue3-flicking": "^4.10.7",
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
