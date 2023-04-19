@@ -1,7 +1,7 @@
 <template>
     <img
         v-if="svgSource(props.name) !== null"
-        :src="svgSource(props.name)"
+        :src="svgSource(props.name) || ''"
         :alt="props.name"
         class="h-6 w-6 opacity-60" />
     <span v-else>

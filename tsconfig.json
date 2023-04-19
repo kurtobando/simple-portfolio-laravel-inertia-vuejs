@@ -15,7 +15,8 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["resources/js/*"],
-            "@svg/*": ["resources/svg/*"]
+            "@svg/*": ["resources/svg/*"],
+            "@type/*": ["resources/type/*"]
         }
     },
     "include": [

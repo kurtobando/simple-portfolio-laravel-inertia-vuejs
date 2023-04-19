@@ -30,12 +30,12 @@
 </template>
 
 <script lang="ts" setup>
-import { Project } from '../../types/project';
+import { Project } from '@type/project';
 import { computed } from 'vue';
 import { Head } from '@inertiajs/vue3';
 import Svg from '@/Components/Svg.vue';
 
-const convertToolsToArray = computed(() => (icons) => icons.split(',').map((icon) => icon.trim()));
+const convertToolsToArray = computed(() => (icons: string) => icons.split(',').map((icon) => icon.trim()));
 const props = defineProps<Props>();
 
 interface Props {

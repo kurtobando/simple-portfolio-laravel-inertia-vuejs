@@ -47,12 +47,13 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, inject } from 'vue';
+import { SharedProps } from '@type/inertia';
+import { computed } from 'vue';
 import { useForm, usePage, Head, Link } from '@inertiajs/vue3';
 import Toastify from 'toastify-js';
+import route from 'ziggy-js';
 
-const route = inject('route');
-const error = computed(() => usePage().props.flash.error);
+const error = computed(() => usePage<SharedProps>().props.flash.error);
 const form = useForm({ email: '', password: '' });
 
 function onSubmit() {

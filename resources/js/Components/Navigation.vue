@@ -23,7 +23,5 @@
 
 <script lang="ts" setup>
 import { Link } from '@inertiajs/vue3';
-import { inject } from 'vue';
-
-const route = inject('route');
+import route from 'ziggy-js';
 </script>

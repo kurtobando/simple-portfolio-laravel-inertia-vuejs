@@ -36,15 +36,15 @@
 </template>
 
 <script lang="ts" setup>
-import { Project } from '../../types/project';
-import { computed, inject } from 'vue';
+import { Project } from '@type/project';
+import { computed } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { Perspective, Pagination, Fade } from '@egjs/flicking-plugins';
 import Flicking from '@egjs/vue3-flicking';
 import Svg from '@/Components/Svg.vue';
+import route from 'ziggy-js';
 
-const route = inject('route');
-const convertToolsToArray = computed(() => (icons) => icons.split(',').map((icon) => icon.trim()));
+const convertToolsToArray = computed(() => (icons: string) => icons.split(',').map((icon) => icon.trim()));
 const plugins = [new Perspective({ rotate: 0.2, scale: 4 }), new Pagination({ type: 'bullet' }), new Fade()];
 const options = { autoResize: true };
 const props = defineProps<Props>();
