@@ -1,26 +1,26 @@
 <template>
     <Head>
-        <title>{{ project.title }}</title>
+        <title>{{ props.project.title }}</title>
     </Head>
     <div class="project">
         <div>
-            <h1 class="font-bold text-5xl leading-tight">{{ project.title }}</h1>
-            <div v-html="project.content"></div>
+            <h1 class="font-bold text-5xl leading-tight">{{ props.project.title }}</h1>
+            <div v-html="props.project.content"></div>
             <ul class="flex flex-row justify-center gap-2 mt-8 items-center">
                 <li
-                    v-for="svg in convertToolsToArray(project.tools)"
+                    v-for="svg in convertToolsToArray(props.project.tools)"
                     :key="svg">
                     <Svg :name="svg" />
                 </li>
             </ul>
             <div class="flex flex-row items-center justify-center gap-4 mt-8">
                 <a
-                    :href="project.demo"
+                    :href="props.project.demo"
                     target="_blank">
                     <button class="button button-primary">Demo</button>
                 </a>
                 <a
-                    :href="project.source"
+                    :href="props.project.source"
                     target="_blank">
                     <button class="button button-primary-outline">Source Code</button>
                 </a>
@@ -29,20 +29,23 @@
     </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
+import { Project } from '../../types/project';
 import { computed } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
 import Svg from '@/Components/Svg.vue';
 
 const convertToolsToArray = computed(() => (icons) => icons.split(',').map((icon) => icon.trim()));
+const props = defineProps<Props>();
 
-defineProps({
-    project: Object,
-});
+interface Props {
+    project: Project;
+}
 </script>
 
-<script>
+<script lang="ts">
 import FullWidth from '@/Layout/FullWidth.vue';
+
 export default {
     layout: FullWidth,
 };

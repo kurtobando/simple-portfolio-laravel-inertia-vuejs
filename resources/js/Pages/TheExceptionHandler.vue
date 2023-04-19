@@ -9,14 +9,9 @@
     </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { computed } from 'vue';
 import { Head } from '@inertiajs/inertia-vue3';
-
-const props = defineProps({
-    status: Number,
-    message: String,
-});
 
 const title = computed(() => {
     return {
@@ -38,4 +33,11 @@ const description = computed(() => {
         403: 'Sorry, you are forbidden from accessing this page.',
     }[props.status];
 });
+
+const props = defineProps<Props>();
+
+interface Props {
+    status: number;
+    message: string;
+}
 </script>

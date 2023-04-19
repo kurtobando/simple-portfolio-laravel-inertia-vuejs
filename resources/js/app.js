@@ -19,4 +19,6 @@ createInertiaApp({
         app.use(plugin);
         app.mount(el);
     },
+}).then(() => {
+    console.log('Inertia app mounted');
 });

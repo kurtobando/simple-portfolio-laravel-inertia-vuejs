@@ -11,7 +11,7 @@
     </main>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { Head, usePage } from '@inertiajs/inertia-vue3';
 import { computed } from 'vue';
 import Navigation from '@/Components/Navigation.vue';

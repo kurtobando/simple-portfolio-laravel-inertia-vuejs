@@ -7,7 +7,7 @@
             :options="options"
             :plugins="plugins">
             <div
-                v-for="project in projects"
+                v-for="project in props.projects"
                 :key="project.id">
                 <div class="flex flex-col justify-center align-center gap-4 w-[80vw] h-[80vh] text-center">
                     <Link :href="route('projects.show', { slug: project.slug })">
@@ -35,24 +35,28 @@
     </div>
 </template>
 
-<script setup>
-import { computed } from 'vue';
+<script lang="ts" setup>
+import { Project } from '../../types/project';
+import { computed, inject } from 'vue';
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import { Perspective, Pagination, Fade } from '@egjs/flicking-plugins';
 import Flicking from '@egjs/vue3-flicking';
 import Svg from '@/Components/Svg.vue';
 
+const route = inject('route');
 const convertToolsToArray = computed(() => (icons) => icons.split(',').map((icon) => icon.trim()));
 const plugins = [new Perspective({ rotate: 0.2, scale: 4 }), new Pagination({ type: 'bullet' }), new Fade()];
 const options = { autoResize: true };
+const props = defineProps<Props>();
 
-defineProps({
-    projects: Array,
-});
+interface Props {
+    projects: Project[];
+}
 </script>
 
-<script>
+<script lang="ts">
 import FullWidth from '@/Layout/FullWidth.vue';
+
 export default {
     layout: FullWidth,
 };
