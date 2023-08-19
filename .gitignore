@@ -5,6 +5,7 @@
 /bootstrap/ssr
 /storage/*.key
 /vendor
+/resources/js/ziggy.js
 .env
 .env.backup
 .env.production
