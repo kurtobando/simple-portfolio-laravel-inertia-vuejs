@@ -39,7 +39,7 @@
             </form>
             <Link
                 class="text-sm text-slate-400 text-center hover:text-blue-500"
-                :href="route('about')">
+                href="/">
                 Go to Home
             </Link>
         </div>
@@ -51,13 +51,12 @@ import { SharedProps } from '@type/inertia';
 import { computed } from 'vue';
 import { useForm, usePage, Head, Link } from '@inertiajs/vue3';
 import Toastify from 'toastify-js';
-import route from 'ziggy-js';
 
 const error = computed(() => usePage<SharedProps>().props.flash.error);
 const form = useForm({ email: '', password: '' });
 
 function onSubmit() {
-    form.post(route('sign-in.store'), {
+    form.post('/sign-in', {
         preserveScroll: true,
         onSuccess: () => {
             if (error.value) {

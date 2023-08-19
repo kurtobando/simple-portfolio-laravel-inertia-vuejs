@@ -79,8 +79,6 @@ import { Head, useForm, usePage } from '@inertiajs/vue3';
 import Toastify from 'toastify-js';
 import Modal from '@/Components/Modal.vue';
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
-import route from 'ziggy-js';
-import { defineOptions } from 'unplugin-vue-define-options/macros';
 import FullWidth from '@/Layout/FullWidth.vue';
 
 const modalIsOpen = ref(false);
@@ -89,7 +87,7 @@ const error = computed(() => usePage<SharedProps>().props.flash.error);
 const form = useForm({ name: '', email: '', message: '' });
 
 function onSubmit() {
-    form.post(route('contact.store'), {
+    form.post('/contact', {
         preserveScroll: true,
         onSuccess: () => {
             form.reset('name', 'email', 'message');

@@ -3,19 +3,19 @@
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url === '/' }"
-            :href="route('about')">
+            href="/">
             About
         </Link>
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url.startsWith('/projects') }"
-            :href="route('projects')">
+            href="/projects">
             Projects
         </Link>
         <Link
             class="hover:text-blue-500 transition-colors duration-200"
             :class="{ 'font-bold': $page.url.startsWith('/contact') }"
-            :href="route('contact')">
+            href="/contact">
             Contact
         </Link>
     </menu>
@@ -23,5 +23,4 @@
 
 <script lang="ts" setup>
 import { Link } from '@inertiajs/vue3';
-import route from 'ziggy-js';
 </script>

@@ -8,7 +8,7 @@ import { createSSRApp, h } from 'vue';
 import { renderToString } from '@vue/server-renderer';
 import { createInertiaApp } from '@inertiajs/vue3';
 import createServer from '@inertiajs/vue3/server';
-import { ZiggyVue } from 'ziggyVue';
+import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import { Ziggy } from './ziggy';
 
 createServer((page) =>
@@ -16,13 +16,10 @@ createServer((page) =>
         page,
         render: renderToString,
         resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-        setup({ app, props, plugin }) {
-            const ssr = createSSRApp({ render: () => h(app, props) });
-
-            ssr.use(ZiggyVue, Ziggy);
-            ssr.use(plugin);
-
-            return ssr;
+        setup({ App, props, plugin }) {
+            return createSSRApp({ render: () => h(App, props) })
+                .use(plugin)
+                .use(ZiggyVue, Ziggy);
         },
     })
 );

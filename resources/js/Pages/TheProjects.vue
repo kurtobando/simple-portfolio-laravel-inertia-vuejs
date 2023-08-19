@@ -10,7 +10,7 @@
                 v-for="project in props.projects"
                 :key="project.id">
                 <div class="flex flex-col justify-center align-center gap-4 w-[80vw] h-[80vh] text-center">
-                    <Link :href="route('projects.show', { slug: project.slug })">
+                    <Link :href="`/projects/${project.slug}`">
                         <span
                             class="font-bold text-5xl hover:text-blue-500 transition-colors duration-200 leading-tight">
                             {{ project.title }}
@@ -42,8 +42,6 @@ import { Head, Link } from '@inertiajs/vue3';
 import { Perspective, Pagination, Fade } from '@egjs/flicking-plugins';
 import Flicking from '@egjs/vue3-flicking';
 import Svg from '@/Components/Svg.vue';
-import route from 'ziggy-js';
-import { defineOptions } from 'unplugin-vue-define-options/macros';
 import FullWidth from '@/Layout/FullWidth.vue';
 
 const convertToolsToArray = computed(() => (icons: string) => icons.split(',').map((icon) => icon.trim()));

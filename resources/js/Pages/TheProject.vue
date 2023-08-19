@@ -34,7 +34,6 @@ import { Project } from '@type/project';
 import { computed } from 'vue';
 import { Head } from '@inertiajs/vue3';
 import Svg from '@/Components/Svg.vue';
-import { defineOptions } from 'unplugin-vue-define-options/macros';
 import FullWidth from '@/Layout/FullWidth.vue';
 
 const convertToolsToArray = computed(() => (icons: string) => icons.split(',').map((icon) => icon.trim()));

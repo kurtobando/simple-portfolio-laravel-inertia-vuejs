@@ -10,7 +10,6 @@
 
 <script lang="ts" setup>
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
-import { defineOptions } from 'unplugin-vue-define-options/macros';
 import FullWidth from '@/Layout/FullWidth.vue';
 
 defineOptions({
