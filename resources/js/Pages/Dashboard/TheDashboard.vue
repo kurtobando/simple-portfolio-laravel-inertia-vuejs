@@ -1,8 +1,8 @@
 <template>
-    <Head>
-        <title>Dashboard</title>
-    </Head>
     <div class="min-h-screen bg-slate-100 grid place-items-center p-6">
+        <Head>
+            <title>Dashboard</title>
+        </Head>
         <div class="p-8 bg-white shadow flex flex-col gap-4 w-full md:w-2/3">
             <h1 class="font-bold text-5xl mb-8">Hello there!</h1>
             <a

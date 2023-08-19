@@ -10,12 +10,10 @@
 
 <script lang="ts" setup>
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
-</script>
-
-<script lang="ts">
+import { defineOptions } from 'unplugin-vue-define-options/macros';
 import FullWidth from '@/Layout/FullWidth.vue';
 
-export default {
+defineOptions({
     layout: FullWidth,
-};
+});
 </script>

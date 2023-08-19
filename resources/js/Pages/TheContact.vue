@@ -1,8 +1,8 @@
 <template>
-    <Head>
-        <title>Contact</title>
-    </Head>
     <div class="flex flex-col justify-center items-center text-center gap-4 p-8 h-[88vh]">
+        <Head>
+            <title>Contact</title>
+        </Head>
         <h1 class="font-bold text-5xl wider leading-tight">Want to work together ?</h1>
         <p class="text-lg text-slate-500">
             If you are excited about something you are making. I want to work with you.
@@ -80,6 +80,8 @@ import Toastify from 'toastify-js';
 import Modal from '@/Components/Modal.vue';
 import SocialMediaLinks from '@/Components/SocialMediaLinks.vue';
 import route from 'ziggy-js';
+import { defineOptions } from 'unplugin-vue-define-options/macros';
+import FullWidth from '@/Layout/FullWidth.vue';
 
 const modalIsOpen = ref(false);
 const success = computed(() => usePage<SharedProps>().props.flash.success);
@@ -104,14 +106,10 @@ function onSubmit() {
 }
 
 const modalToggle = () => (modalIsOpen.value = !modalIsOpen.value);
-</script>
 
-<script lang="ts">
-import FullWidth from '@/Layout/FullWidth.vue';
-
-export default {
+defineOptions({
     layout: FullWidth,
-};
+});
 </script>
 
 <style scoped>

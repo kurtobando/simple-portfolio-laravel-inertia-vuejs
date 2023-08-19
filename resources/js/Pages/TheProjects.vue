@@ -1,8 +1,8 @@
 <template>
-    <Head>
-        <title>Personal Projects</title>
-    </Head>
     <div class="grid place-items-center h-[88vh] w-full overflow-hidden">
+        <Head>
+            <title>Personal Projects</title>
+        </Head>
         <Flicking
             :options="options"
             :plugins="plugins">
@@ -43,6 +43,8 @@ import { Perspective, Pagination, Fade } from '@egjs/flicking-plugins';
 import Flicking from '@egjs/vue3-flicking';
 import Svg from '@/Components/Svg.vue';
 import route from 'ziggy-js';
+import { defineOptions } from 'unplugin-vue-define-options/macros';
+import FullWidth from '@/Layout/FullWidth.vue';
 
 const convertToolsToArray = computed(() => (icons: string) => icons.split(',').map((icon) => icon.trim()));
 const plugins = [new Perspective({ rotate: 0.2, scale: 4 }), new Pagination({ type: 'bullet' }), new Fade()];
@@ -52,14 +54,10 @@ const props = defineProps<Props>();
 interface Props {
     projects: Project[];
 }
-</script>
 
-<script lang="ts">
-import FullWidth from '@/Layout/FullWidth.vue';
-
-export default {
+defineOptions({
     layout: FullWidth,
-};
+});
 </script>
 
 <style>

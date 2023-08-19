@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
+import DefineOptions from 'unplugin-vue-define-options/vite';
 
 export default defineConfig({
     build: {
@@ -21,6 +22,7 @@ export default defineConfig({
                 },
             },
         }),
+        DefineOptions(),
     ],
     ssr: {
         noExternal: ['@inertiajs/server'],

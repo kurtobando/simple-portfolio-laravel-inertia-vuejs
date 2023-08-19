@@ -10,7 +10,7 @@
         "esModuleInterop": true,
         "lib": ["ESNext", "DOM"],
         "skipLibCheck": true,
-        "types": ["vite/client", "node"],
+        "types": ["vite/client", "node", "unplugin-vue-define-options/macros-global"],
         "allowJs": true,
         "baseUrl": ".",
         "paths": {

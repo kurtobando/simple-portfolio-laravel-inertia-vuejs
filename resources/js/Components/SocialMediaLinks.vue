@@ -6,7 +6,7 @@
                 target="_blank">
                 <Github
                     class="hover:text-blue-500 transition-colors duration-200"
-                    size="30" />
+                    :size="30" />
             </a>
         </li>
         <li>
@@ -15,7 +15,7 @@
                 target="_blank">
                 <Linkedin
                     class="hover:text-blue-500 transition-colors duration-200"
-                    size="30" />
+                    :size="30" />
             </a>
         </li>
     </ul>

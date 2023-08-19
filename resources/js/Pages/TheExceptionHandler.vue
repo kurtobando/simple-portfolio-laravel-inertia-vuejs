@@ -1,9 +1,9 @@
 <template>
-    <Head>
-        <title>{{ title }}</title>
-    </Head>
     <div
         class="min-h-screen flex flex-col items-center justify-center text-center uppercase text-slate-600 text-lg tracking-wider p-4">
+        <Head>
+            <title>{{ title }}</title>
+        </Head>
         <p>Oops, {{ title }}!</p>
         <p class="text-slate-400 text-xs leading-relaxed">{{ message ?? description }}</p>
     </div>
