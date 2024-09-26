@@ -24,7 +24,7 @@ class ContactMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('me@kurtobando.com', 'Kurt Obando'),
+            from: new Address(config('mail.from.address'), config('mail.from.name')),
             subject: 'Thank you for contacting, '.$this->name,
         );
     }
