@@ -3,7 +3,7 @@
         <title>Sign-in</title>
     </Head>
     <div class="min-h-screen grid place-items-center bg-slate-100">
-        <div class="flex flex-col gap-8 p-4">
+        <div class="w-full md:w-1/3 flex flex-col gap-8 p-4">
             <form
                 autocomplete="off"
                 class="flex flex-col gap-4 p-6 md:p-10 py-20 bg-white shadow rounded placeholder-slate-400 text-sm"
