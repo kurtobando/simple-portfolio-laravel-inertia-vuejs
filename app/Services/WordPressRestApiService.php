@@ -18,8 +18,8 @@ class WordPressRestApiService
     {
         $response = Http::get("{$this->url}/wp-json/wp/v2/{$this->postType}?status={$status}");
 
-        if (!$response->ok()) {
-            throw new WordPressRestApiInvalidUrlException("WordPress REST API Url is invalid");
+        if (! $response->ok()) {
+            throw new WordPressRestApiInvalidUrlException('WordPress REST API Url is invalid');
         }
 
         return $response->json();
@@ -29,8 +29,8 @@ class WordPressRestApiService
     {
         $response = Http::get("{$this->url}/wp-json/wp/v2/{$this->postType}?slug={$slug}&status={$status}");
 
-        if (!$response->ok()) {
-            throw new WordPressRestApiInvalidUrlException("WordPress REST API Url is invalid");
+        if (! $response->ok()) {
+            throw new WordPressRestApiInvalidUrlException('WordPress REST API Url is invalid');
         }
 
         return $response->json();

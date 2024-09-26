@@ -25,7 +25,7 @@ class ContactMail extends Mailable implements ShouldQueue
     {
         return new Envelope(
             from: new Address('me@kurtobando.com', 'Kurt Obando'),
-            subject: 'Thank you for contacting, ' . $this->name,
+            subject: 'Thank you for contacting, '.$this->name,
         );
     }
 

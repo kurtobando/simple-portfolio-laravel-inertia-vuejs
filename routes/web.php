@@ -23,16 +23,16 @@ Route::get('/', static function () {
     return Inertia::render('TheIndex');
 })->name('about');
 
-Route::get('/projects', [ProjectController::class, "index"])->name('projects');
-Route::get('/projects/{slug}', [ProjectController::class, "show"])->name('projects.show');
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('projects.show');
 
-Route::get('/contact', [ContactController::class, "index"])->name('contact');
-Route::post('/contact', [ContactController::class, "store"])->name('contact.store');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/sign-in', [SigninController::class, "index"])->name('sign-in');
-Route::post('/sign-in', [SigninController::class, "store"])->name('sign-in.store');
+Route::get('/sign-in', [SigninController::class, 'index'])->name('sign-in');
+Route::post('/sign-in', [SigninController::class, 'store'])->name('sign-in.store');
 
 Route::group(['middleware' => 'auth'], static function () {
-    Route::post('/sign-out', [SignoutController::class, "__invoke"])->name('sign-out');
-    Route::get('/dashboard', [DashboardController::class, "index"])->name('dashboard');
+    Route::post('/sign-out', [SignoutController::class, '__invoke'])->name('sign-out');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });

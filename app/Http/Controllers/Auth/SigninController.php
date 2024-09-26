@@ -16,7 +16,7 @@ class SigninController extends Controller
 
     public function store(SigninRequest $request): RedirectResponse
     {
-        if (!auth()->attempt($request->only('email', 'password'))) {
+        if (! auth()->attempt($request->only('email', 'password'))) {
             return redirect()
                 ->route('sign-in')
                 ->with('error', 'Incorrect sign-in credentials.');

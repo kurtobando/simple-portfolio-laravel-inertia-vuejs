@@ -17,7 +17,7 @@ class WordPressRestApiInvalidUrlException extends Exception
     {
         return Inertia::render('TheExceptionHandler', [
             'status' => 400,
-            'message' => $this->getMessage()
+            'message' => $this->getMessage(),
         ]);
     }
 }

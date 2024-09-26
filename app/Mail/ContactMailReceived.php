@@ -22,7 +22,6 @@ class ContactMailReceived extends Mailable implements ShouldQueue
         //
     }
 
-
     public function envelope(): Envelope
     {
         return new Envelope(

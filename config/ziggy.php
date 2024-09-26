@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'except' => ['_debugbar.*', 'horizon.*', 'telescope.*','dashboard.*'],
+    'except' => ['_debugbar.*', 'horizon.*', 'telescope.*', 'dashboard.*'],
 ];
