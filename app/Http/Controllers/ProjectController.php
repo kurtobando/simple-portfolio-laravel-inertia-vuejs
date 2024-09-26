@@ -2,15 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\WordPressRestApiInvalidUrlException;
 use App\Services\WordPressRestApiService;
 use Inertia\Response;
 
 class ProjectController extends Controller
 {
+    public function __construct(
+        private WordPressRestApiService $wordPressRestApiService
+    ) {
+        //
+    }
+
+    /**
+     * @throws WordPressRestApiInvalidUrlException
+     */
     public function index(): Response
     {
-        $wp = new WordPressRestApiService();
-        $projects = $wp->getPosts();
+        $projects = $this->wordPressRestApiService->getPosts();
         $projects = collect($projects)->map(function ($project) {
             return [
                 'id' => $project['id'],
@@ -24,12 +33,15 @@ class ProjectController extends Controller
         });
 
         return inertia('TheProjects', compact('projects'));
+
     }
 
+    /**
+     * @throws WordPressRestApiInvalidUrlException
+     */
     public function show(string $slug): Response
     {
-        $wp = new WordPressRestApiService();
-        $project = $wp->getPostBySlug($slug);
+        $project = $this->wordPressRestApiService->getPostBySlug($slug);
         $project = collect($project)->map(function ($project) {
             return [
                 'id' => $project['id'],

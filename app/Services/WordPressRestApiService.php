@@ -14,6 +14,12 @@ class WordPressRestApiService
         $this->url = config('wordpress.url');
     }
 
+    /**
+     * @param  string  $status
+     * @return array|WordPressRestApiInvalidUrlException
+     *
+     * @throws WordPressRestApiInvalidUrlException
+     */
     public function getPosts(string $status = 'publish'): array|WordPressRestApiInvalidUrlException
     {
         $response = Http::get("{$this->url}/wp-json/wp/v2/{$this->postType}?status={$status}");
@@ -25,6 +31,13 @@ class WordPressRestApiService
         return $response->json();
     }
 
+    /**
+     * @param  string  $slug
+     * @param  string  $status
+     * @return array|WordPressRestApiInvalidUrlException
+     *
+     * @throws WordPressRestApiInvalidUrlException
+     */
     public function getPostBySlug(string $slug, string $status = 'publish'): array|WordPressRestApiInvalidUrlException
     {
         $response = Http::get("{$this->url}/wp-json/wp/v2/{$this->postType}?slug={$slug}&status={$status}");

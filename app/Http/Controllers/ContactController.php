@@ -3,28 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
-use App\Mail\ContactMail;
-use App\Mail\ContactMailReceived;
+use App\Services\ContactService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Mail;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class ContactController extends Controller
 {
+    public function __construct(
+        private ContactService $contactService
+    ) {
+        //
+    }
+
     public function index(): Response
     {
-        return Inertia::render('TheContact');
+        return inertia('TheContact');
     }
 
     public function store(ContactRequest $request): RedirectResponse
     {
-        Mail::to($request->email)->send(new ContactMail(name: $request->name));
-        Mail::to(config('mail.from.address'))->send(new ContactMailReceived(
-            name: $request->name,
-            email: $request->email,
-            message: $request->message,
-        ));
+        $this->contactService->sendContactEmail([
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+            'ip_address' => $request->ip(),
+        ]);
 
         return redirect()
             ->route('contact')

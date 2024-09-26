@@ -3,7 +3,6 @@
 namespace App\Exceptions;
 
 use Exception;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class WordPressRestApiInvalidUrlException extends Exception
@@ -15,7 +14,7 @@ class WordPressRestApiInvalidUrlException extends Exception
 
     public function render(): Response
     {
-        return Inertia::render('TheExceptionHandler', [
+        return inertia('TheExceptionHandler', [
             'status' => 400,
             'message' => $this->getMessage(),
         ]);
