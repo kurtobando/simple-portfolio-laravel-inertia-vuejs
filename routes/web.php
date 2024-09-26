@@ -6,7 +6,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +19,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', static function () {
-    return Inertia::render('TheIndex');
+    return inertia('TheIndex');
 })->name('about');
 
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
